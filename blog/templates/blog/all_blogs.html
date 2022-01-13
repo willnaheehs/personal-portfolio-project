@@ -1,1 +1,14 @@
-hello blog
+<h1>Will's blogs</h1>
+
+<!-- django template for loop syntax-->
+{% for blog in blogs %}
+
+<h2>{{ blog.title }}</h2> 
+<h3>{{ blog.date }}</h3>
+<p>{{ blog.description }}</p>
+
+{% if blog.url %} <!-- displays link if url provided to admin page in blog object-->
+<a href="{{ blog.url }}">Link</a>
+{% endif %}
+
+{% endfor %}
