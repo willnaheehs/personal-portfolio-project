@@ -6,7 +6,7 @@
 <h2>{{ project.title }}</h2> <!--displays project-->
 <p>{{ project.description }}</p>
 <img src ="{{ project.image.url }}">
-{% if project.url %}
+{% if project.url %} <!-- displays link if url provided to admin page in project tab-->
 <a href="{{ project.url }}">Link</a>
 {% endif %}
 
