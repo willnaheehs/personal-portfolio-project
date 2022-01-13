@@ -1,10 +1,18 @@
+{% extends 'portfolio/base.html' %}
+
+{% block content %}
 <h1>Will's blogs</h1>
+
+<!-- only plural if there are many blogs-->
+<h2>Nick has written {{ blogs.count }} blog{{ blogs.count|pluralize }}</h2> 
 
 <!-- django template for loop syntax-->
 {% for blog in blogs %}
 
-<h2>{{ blog.title }}</h2> 
+<a href="{% url 'blog:detail' blog.id %}"><h2>{{ blog.title }}</h2></a> 
 <h5>{{ blog.date }}</h5>
-<p>{{ blog.description }}</p>
+<p>{{ blog.description }}</p> <!-- description|truncatechars:100 will limit characters in description-->
 
 {% endfor %}
+
+{% endblock %}

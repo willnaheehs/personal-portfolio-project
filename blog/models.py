@@ -6,3 +6,5 @@ class Blog(models.Model):
     description = models.TextField(max_length=250)
     date = models.DateField()
  
+    def __str__(self): #makes title appear in admin database
+        return self.title

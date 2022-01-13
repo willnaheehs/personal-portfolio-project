@@ -1,16 +1,28 @@
-<h1>Will's Portfolio</h1>
+{% extends 'portfolio/base.html' %}
 
-{% load static %} <!--allows for access to image contained in static folder-->
-<img src= "{% static 'dinertablephoto.JPEG' %}">
+{% block content %} <!--name 'content' must match that of base file-->
+    <h1>Will's Portfolio</h1>
 
-<!-- django template for loop syntax-->
-{% for project in projects %}
+    <!-- home page link to blogs -->
+    <a href="{% url 'blog:all_blogs' %}">Blog</a>
+    <br>
 
-<h2>{{ project.title }}</h2> <!--displays project-->
-<p>{{ project.description }}</p>
-<img src ="{{ project.image.url }}">
-{% if project.url %} <!-- displays link if url provided to admin page in project tab-->
-<a href="{{ project.url }}">Link</a>
-{% endif %}
+    {% load static %} <!--allows for access to image contained in static folder-->
+    <img src="{% static 'portfolio/dinertablephoto.JPEG' %}", height=400, wdth=400>
+    <br>
 
-{% endfor %}
+    <a href="{% static 'portfolio/resume.png' %}">Resume</a>
+
+    <!-- django template for loop syntax-->
+    {% for project in projects %}
+
+    <h2>{{ project.title }}</h2> <!--displays project-->
+    <p>{{ project.description }}</p>
+    <img src ="{{ project.image.url }}">
+    {% if project.url %} <!-- displays link if url provided to admin page in project tab-->
+    <a href="{{ project.url }}">Link</a>
+    {% endif %}
+
+    {% endfor %}
+
+{% endblock %}
