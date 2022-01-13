@@ -1,5 +1,8 @@
 <h1>Will's Portfolio</h1>
 
+{% load static %} <!--allows for access to image contained in static folder-->
+<img src= "{% static 'dinertablephoto.JPEG' %}">
+
 <!-- django template for loop syntax-->
 {% for project in projects %}
 
