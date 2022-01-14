@@ -3,15 +3,16 @@
 {% block content %} <!--name 'content' must match that of base file-->
     <h1>Will's Portfolio</h1>
 
-    <!-- home page link to blogs -->
-    <a href="{% url 'blog:all_blogs' %}">Blog</a>
     <br>
 
     {% load static %} <!--allows for access to image contained in static folder-->
     <img src="{% static 'portfolio/dinertablephoto.JPEG' %}", height=400, wdth=400 class = center>
-    <br>
 
-    <a href="{% static 'portfolio/resume.png' %}">Resume</a>
+    <!--  <a href="{% url 'blog:all_blogs' %}">Blog</a> -->
+    <!-- <a href="{% static 'portfolio/resume.png' %}">Resume</a> -->
+    <br>
+    <br>
+    <br>
 
     <div class="row justify-content-center">
         <!-- django template for loop syntax-->
