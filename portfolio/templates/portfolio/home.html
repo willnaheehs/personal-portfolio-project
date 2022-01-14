@@ -18,18 +18,18 @@
         <!-- django template for loop syntax-->
         {% for project in projects %}
         <div class="col-sm-12 col-lg-4">
-    
+
             {% if project.url %}
             <a href="{{ project.url }}">
                 <img src="{{ project.image.url }}" class="img-fluid mb-2">
             </a>
             {% else %}
-        
+
             <img src="{{ project.image.url }}" class="img-fluid mb-2">
             {% endif %}
             <h3>{{ project.title }}</h3>
             <p>{{ project.description }}</p>
-        
+
         </div>
         {% endfor %}
     </div>
